@@ -1,6 +1,6 @@
-# rob314
+# ROB314
 
-The hole project has this module but also an identification pipeline [insert link].
+The project has this module but also a main [pipeline](https://github.com/arthur-ruback/pc_pipeline).
 
 ### Instalation using Catkin
 
@@ -16,7 +16,7 @@ catkin_make
 
 ##### Parameters configuration
 
-The launchfile defined in *launch/pipeline.launch* contains the definition of several parameters.
+The config file defined in *config/params.yaml* contains the definition of several parameters.
 
 - kd *[float]* : proportional gain in relation to linear speed
 
@@ -25,12 +25,14 @@ The launchfile defined in *launch/pipeline.launch* contains the definition of se
 - target_distance *[float]* : goal distance to target
 
 ##### Subscribed topics:
-- /cluster_center *[sensor_msgs/PointStamped]*
+- /cluster_center *[sensor_msgs/PointStamped]* : input from *pc_pipeline*
 
 ##### Published topics:
-- /cmd_vel *[geometry_msgs/Twist]*
+- /cmd_vel *[geometry_msgs/Twist]* : output to low level husky controller
 
 ##### Execution
+
+The standard execution of this module is coupled with *pc_pipeline* but it can be executed by itself using:
 
 ```
 roslaunch husky_controller controller.launch
