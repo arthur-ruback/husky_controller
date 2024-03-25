@@ -3,13 +3,7 @@
 <launch>
    
    <node name="husky_controller" pkg="husky_controller" type="husky_controller_node" output="screen" >
-   <param name="scan_name" type="string" value="/cluster_center" />
-   <param name="scan_queue_size" type="int" value="2" />
-   <param name="command_velocity_name" type="string" value="/cmd_vel" />
-   <param name="command_velocity_queue_size" type="int" value="10" />
-   <param name="kd" type="double" value="0.2" />
-   <param name="kw" type="double" value="0.2" />
-   <param name="target_distance" type="double" value="2" />
+      <rosparam command="load" file="$(find husky_controller)/config/params.yaml"/>
    </node>
    
 </launch>
